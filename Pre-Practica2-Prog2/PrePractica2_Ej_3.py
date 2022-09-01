@@ -1,0 +1,15 @@
+#Crear un programa que utilice la estructura try - catch. El usuario debe de ingresar dos numeros y mostrar por pantalla
+#el resultado de la división entre ambos numeros. 
+
+#En caso de que el divisor sea 0 utilizar la excepción ZeroDivisionError y mostrar el error por pantalla.
+
+
+#INICIO
+var1 = int(input("Ingrese un primer numero "))
+var2 = int(input ("Ingrese un segundo numero "))
+try:
+   resultado = var1 / var2
+   print(resultado)
+except ZeroDivisionError as exception:
+     print(f"Ha ocurrido un error | {exception}")
+#FIN
