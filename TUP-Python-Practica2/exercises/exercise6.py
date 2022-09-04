@@ -4,6 +4,14 @@ from typing import List, Union
 
 
 def numeros_al_final_basico(lista: List[Union[float, str]]) -> List[Union[float, str]]:  # noqa: E501
+    numeros = []
+    for i in lista:
+        if type(i) != str:
+            numeros.append(i)
+            lista.remove(i)
+    lista.extend(numeros)
+    return lista
+
     """Toma una lista de enteros y strings y devuelve una lista con todos los
     elementos numéricos al final.
 
@@ -23,6 +31,11 @@ assert numeros_al_final_basico([3, "a", 1, "b", 10, "j"]) == ["a", "b", "j", 3, 
 
 
 def numeros_al_final_comprension(lista: List[Union[float, str]]) -> List[Union[float, str]]:  # noqa: E501
+    listaletras = [i for i in lista if type(i) == str]
+    listanumeros = [i for i in lista if type(i) == int]
+    listaletras.extend(listanumeros)
+    return listaletras
+
     """Re-escribir utilizando comprensión de listas.
 
     Restricciones:

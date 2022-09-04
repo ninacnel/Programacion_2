@@ -14,6 +14,11 @@ precio_articulos = [100.48, 16.42, 5.20]
 
 
 def combinar_basico(nombres: List[str], precios: List[float]) -> Tuple[Any]:
+    tupla = ()
+    for i in range(len(nombres)):
+        tupla += (nombres[i], precios[i]),
+    return tupla
+    
     """Toma dos listas y devuelve una tupla de duplas con los componentes de
     las listas.
 
@@ -42,6 +47,11 @@ id_articulos = [6852, 1459, 3578]
 
 
 def combinar_enumerate(nombres: List[str], precios: List[float], ids: List[int]) -> Tuple[Any]:  # noqa: E501
+    tupla = ()
+    for i in list(enumerate(nombres)):
+        tupla += (nombres[i[0]], precios[i[0]], ids[i[0]]),
+    return tupla
+
     """Re-Escribir utilizando enumerate y agregando un nuevo componente.
 
     Restricción:
@@ -71,6 +81,8 @@ id_articulos = [6852, 1459, 3578]
 
 
 def combinar_zip(nombres: List[str], precios: List[float], ids: List[int]) -> Tuple[Any]:  # noqa: E501
+    return tuple(zip(nombres, precios, ids))
+
     """Re-Escribir utilizando zip.
 
     Restricción:
@@ -102,6 +114,8 @@ importado_articulos = [True, False, True]
 
 
 def combinar_zip_args(*args) -> Tuple[Any]:
+    return tuple(zip(*args))
+
     """Re-Escribir utilizando zip y una cantidad arbitraria de componentes.
 
     Restricción:
