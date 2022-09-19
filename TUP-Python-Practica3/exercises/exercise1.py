@@ -2,22 +2,29 @@
 
 from math import pi
 
+"""Todo cículo tiene un radio y se desea conocer tanto el área como el
+perímetro (longitud de circunferencia).
+
+Reportar los números redondeados a dos decimales
+
+Restricciones:
+    - Utilizar 1 variable de instancia
+    - Utilizar 2 métodos de instancia
+    - No utilizar variable de clase
+    - No utilizar Dataclasses
+    - No utilizar Properties
+    - Utilizar Type Hints en todos los métodos y variables
+"""
 
 class Circle:
-    """Todo cículo tiene un radio y se desea conocer tanto el área como el
-    perímetro (longitud de circunferencia).
-
-    Reportar los números redondeados a dos decimales
-
-    Restricciones:
-        - Utilizar 1 variable de instancia
-        - Utilizar 2 métodos de instancia
-        - No utilizar variable de clase
-        - No utilizar Dataclasses
-        - No utilizar Properties
-        - Utilizar Type Hints en todos los métodos y variables
-    """
-
+    def __init__(self,radio:float) -> float:
+        self.radio: float = radio
+        
+    def area(self) -> float:
+        return (self.radio**2)*round(pi,2)
+    
+    def perimetro(self) -> float:
+        return self.radio*round(pi,2)*2
 
 # NO MODIFICAR - INICIO
 # Test básico
