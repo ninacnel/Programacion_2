@@ -21,10 +21,10 @@ class Circle:
         self.radio: float = radio
         
     def area(self) -> float:
-        return (self.radio**2)*round(pi,2)
+        return (self.radio **2) *round(pi,2)
     
     def perimetro(self) -> float:
-        return self.radio*round(pi,2)*2
+        return (self.radio *round(pi,2)*2)
 
 # NO MODIFICAR - INICIO
 # Test básico
